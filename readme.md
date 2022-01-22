@@ -1,5 +1,3 @@
-# **NOTICE:** For now, this documentation is useless.
-
 To build your own Duino-Coin apps we've created Duino-Coin API for JavaScript.
 
 ### Main Functions
