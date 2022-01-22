@@ -134,13 +134,40 @@ Examples:
         ]
     */
 
-    // Get user Transactions [array]
-    ducoUser.getTransactions().then(data => {
+    // Get user Transactions (Returns the last 5 transactions) [array]
+    ducoUser.getLastTransactions().then(data => {
         console.table(data);
     });
     /*
         [
             0: {
+                amount: 300
+                datetime: "15/01/2022 09:05:31"
+                hash: "0887e68f1626631885a23d48c0647848a7cae260"
+                id: 255280
+                memo: "Gift"
+                recipient: "Hugo"
+                sender: "LDarki"
+            }
+        ]
+    */
+
+    // Get user Transactions [array]
+    ducoUser.getTransactions(2).then(data => {
+        console.table(data);
+    });
+    /*
+        [
+            0: {
+                amount: 2
+                datetime: "15/01/2022 08:46:09"
+                hash: "af2dc746378dfc421ab55eade9b5f090c6676700"
+                id: 255240
+                memo: "0xEc06e9541b430B0C8CCC93BB61d49C854cA4045B"
+                recipient: "bscDUCO"
+                sender: "LDarki"
+            },
+            1: {
                 amount: 300
                 datetime: "15/01/2022 09:05:31"
                 hash: "0887e68f1626631885a23d48c0647848a7cae260"

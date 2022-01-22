@@ -125,11 +125,23 @@ class DucoUser {
         });
     }
 
-    getTransactions() {
+    getLastTransactions() {
         return new Promise((resolve, reject) => {
             try {
                 this.getData().then(response => {
                     resolve(response["result"].transactions);
+                });
+            } catch (err) {
+                reject(err);
+            }
+        });
+    }
+
+    getTransactions(count) {
+        return new Promise((resolve, reject) => {
+            try {
+                fetch(baseUrl + 'user_transactions/' + this.name + '?limit=' + parseInt(count)).then(response => response.json()).then(response => {
+                    resolve(response["result"]);
                 });
             } catch (err) {
                 reject(err);

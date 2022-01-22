@@ -2,7 +2,7 @@
 
     console.log("Server Tests");
 
-    /*let serverData = await getServerData();
+    let serverData = await getServerData();
     console.log(serverData); 
 
     let allDuco = await getAllDucoPrice();
@@ -16,7 +16,7 @@
 
     let KolkaData = await getKolkaData();
     console.log(KolkaData); 
-    */
+    
     console.log("User tests");
 
     let ducoUser = new DucoUser("LDarki");
@@ -37,7 +37,11 @@
         console.log(data);
     });
 
-    ducoUser.getTransactions().then(data => {
+    ducoUser.getLastTransactions().then(data => {
+        console.log(data);
+    });
+
+    ducoUser.getTransactions(2).then(data => {
         console.log(data);
     });
     
